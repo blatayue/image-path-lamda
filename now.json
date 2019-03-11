@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js",
+      "headers": {
+        "Cache-Control": "public, max-age=0, s-maxage=2592000",
+        "Cache-Tag": "sparend-img"
+      }
+    }
+  ],
+  "alias": ["img.sparend.app"]
+}
